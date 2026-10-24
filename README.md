@@ -53,6 +53,8 @@ flowchart LR
     UI -->|HTML and static assets| U
 ```
 
+**Text version:** Household → Flask web interface → authenticated Flask routes and services → validated input → Python energy/bill calculations. For AI plans, the routes call the local `llama.cpp` adapter, which requests structured routine JSON from Qwen; WattWise validates the proposed plan and calculates its results before returning it to the interface. Account and saved analysis data are stored in local SQLite. The calculations continue to work when the model server is unavailable.
+
 Core prepaid and postpaid calculations work without Qwen. AI routine generation and AI-written explanations require the separate local model server. The model does not supply authoritative kWh, duration, bill comparisons, or charges.
 
 ## Technology
