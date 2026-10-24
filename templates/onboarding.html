@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Set up WattWise{% endblock %}
+{% block content %}
+<section class="onboarding-shell">
+  <p class="eyebrow">LET’S SET UP YOUR HOUSEHOLD</p>
+  <h1>How do you pay for electricity?</h1>
+  <p class="onboarding-lead">Choose the option that matches your home. We’ll tailor WattWise to the way your electricity is billed.</p>
+  <div class="setup-choices" role="group" aria-label="Choose how you pay for electricity">
+    <button class="setup-choice" type="button" data-customer-type="prepaid" aria-pressed="false">
+      <span class="choice-art prepaid-art" aria-hidden="true"><span>METER DISPLAY</span><strong>42.6</strong><small>units left</small></span>
+      <span class="choice-copy"><strong>Prepaid meter</strong><span>I buy electricity credit. My meter shows how many units I have left.</span></span>
+      <span class="choice-select" aria-hidden="true"></span>
+    </button>
+    <button class="setup-choice" type="button" data-customer-type="postpaid" aria-pressed="false">
+      <span class="choice-art postpaid-art" aria-hidden="true"><span>THIS MONTH</span><strong>₦ —</strong><small>bill arrives later</small></span>
+      <span class="choice-copy"><strong>Postpaid bill</strong><span>I use electricity first, then receive a bill for what my home used.</span></span>
+      <span class="choice-select" aria-hidden="true"></span>
+    </button>
+  </div>
+  <div id="onboarding-message" class="notice notice-error" role="alert" hidden></div>
+  <p class="onboarding-note">You can change this choice later in your household settings.</p>
+</section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/onboarding.js') }}" defer></script>{% endblock %}

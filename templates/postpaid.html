@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Postpaid bill analysis — WattWise{% endblock %}
+{% block content %}
+<section class="page-intro"><p class="eyebrow">YOUR POSTPAID BILL</p><h1>Make sense of your electricity bill.</h1><p>Compare what your home may have used with the figures on your bill. You can skip details you can’t find right now.</p></section>
+<form id="analysis-form" data-mode="postpaid" data-endpoint="/api/postpaid/analyze" novalidate>
+  <section class="form-section"><div class="section-heading"><div><p class="step-kicker">STEP 1</p><h2>What does your bill say?</h2></div></div>
+    <div class="field-grid three-cols">
+      <label>How many days does it cover?<input name="period_days" type="number" min="1" max="366" step="1" value="30" required><small>Often around 30 days.</small></label>
+      <label>Electricity used (units or kWh)<input name="billed_kwh" type="number" min="0" step="any" placeholder="Optional"><small>Look for “units consumed” or “kWh”.</small></label>
+      <label>Price per unit (₦), if shown<input name="tariff" type="number" min="0" step="any" placeholder="Optional"><small>This may appear as a tariff or rate.</small></label>
+    </div>
+    <details class="optional-details"><summary>I can’t find units, but I have meter readings or other bill details</summary>
+      <p class="helper">You can enter meter readings if that’s what your bill shows. Leave anything you can’t find blank.</p>
+      <div class="field-grid three-cols">
+        <label>Reading before this bill<input name="previous_reading" type="number" min="0" step="any"></label>
+        <label>Reading at the end of this bill<input name="present_reading" type="number" min="0" step="any"></label>
+        <label>Meter multiplier, if shown<input name="multiplier" type="number" min="0.000001" step="any" value="1"></label>
+        <label>Was the reading actual or estimated?<select name="reading_type"><option value="actual">Actual reading</option><option value="estimated">Estimated reading</option><option value="unknown">Not sure</option></select></label>
+        <label>Energy charge (₦)<input name="energy_charge" type="number" min="0" step="any"></label>
+        <label>Total amount due (₦)<input name="total_amount" type="number" min="0" step="any"></label>
+        <label>Other charges (₦)<input name="other_charges" type="number" min="0" step="any"></label>
+      </div>
+      <p class="helper">Please leave out your name, address, account number, meter number, and payment or token details.</p>
+    </details>
+  </section>
+  <section class="form-section">
+    <div class="section-heading"><div><p class="step-kicker">STEP 2</p><h2>What do you want your routine to achieve?</h2></div></div>
+    <div class="field-grid two-cols">
+      <label>How much less energy would you like to use?<input name="target_reduction_percent" type="number" min="5" max="80" step="5" value="20" required><small>Choose a goal from 5% to 80% below your usual appliance-use estimate.</small></label>
+    </div>
+    <p class="helper">After the bill estimate, WattWise AI will suggest a daily and weekly appliance routine and check the energy totals against this goal.</p>
+  </section>
+  {% set appliance_step = "STEP 3" %}
+  {% include "_appliance_editor.html" %}
+  <div class="form-actions"><button class="button button-primary" type="submit">Compare my bill</button><p class="privacy-note">A difference is something to review, not proof that a bill is wrong.</p></div>
+</form>
+<section id="results" class="results-panel" aria-live="polite" hidden></section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/app.js') }}" defer></script>{% endblock %}
+

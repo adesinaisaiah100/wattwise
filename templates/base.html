@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7f4">
+  <title>{% block title %}WattWise{% endblock %}</title>
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/household.css') }}">
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="WattWise home"><span class="brand-mark">W</span><span>WattWise</span></a>
+    <nav aria-label="Main navigation">
+      <a href="/prepaid" data-mode-nav="prepaid">Prepaid</a>
+      <a href="/postpaid" data-mode-nav="postpaid">Postpaid</a>
+      <a href="/onboarding" data-onboarding-link hidden>Choose your service</a>
+      <a href="/login" data-account-link>Sign in</a>
+    </nav>
+  </header>
+  <main class="page-shell">{% block content %}{% endblock %}</main>
+  <footer class="site-footer">WattWise estimates from the details you provide. Your meter and bill remain the source for actual readings and charges.</footer>
+  <script src="{{ url_for('static', filename='js/session.js') }}" defer></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
+

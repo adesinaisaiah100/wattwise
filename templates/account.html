@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}My WattWise account{% endblock %}
+{% block content %}
+<section class="page-intro"><p class="eyebrow">YOUR HOUSEHOLD</p><h1>Your home setup.</h1><p id="account-email">Loading your local account…</p></section>
+<div id="account-message" class="notice notice-error" role="alert" hidden></div>
+<section class="form-section account-section"><div class="section-heading"><div><p class="step-kicker">YOUR ELECTRICITY SERVICE</p><h2 data-customer-type-label>Loading your setup…</h2></div><a class="button button-small button-outline" href="/onboarding?edit=1">Change</a></div><p class="helper">WattWise shows the tools that match the way your household pays for electricity.</p></section>
+<section class="form-section account-section"><div class="section-heading"><div><p class="eyebrow">HOUSEHOLD PROFILE</p><h2>Saved appliances and routines</h2></div><button type="button" class="button button-small button-outline" data-logout>Log out</button></div><div id="saved-appliances"><p class="helper">No household setup saved yet. Run an analysis and choose “Save appliance setup”.</p></div></section>
+<section class="form-section account-section"><div class="section-heading"><div><p class="eyebrow">LOCAL HISTORY</p><h2>Saved analyses</h2></div></div><div id="analysis-history"><p class="helper">No saved analyses yet.</p></div></section>
+<p class="privacy-note">Your data stays in the local WattWise SQLite database in this installation's ignored <code>instance/</code> folder.</p>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/account.js') }}" defer></script>{% endblock %}

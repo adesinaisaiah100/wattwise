@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Prepaid planning — WattWise{% endblock %}
+{% block content %}
+<section class="page-intro"><p class="eyebrow">YOUR PREPAID METER</p><h1>Plan how long your units can last.</h1><p>Tell us what your meter shows and what your household uses. We’ll estimate how long your current units may last and suggest routines you can review.</p></section>
+<form id="analysis-form" data-mode="prepaid" data-endpoint="/api/prepaid/analyze" novalidate>
+  <section class="form-section"><div class="section-heading"><div><p class="step-kicker">STEP 1</p><h2>What does your meter show?</h2></div></div>
+    <div class="field-grid two-cols">
+      <label>Units left on your meter<input name="available_units_kwh" type="number" min="0" step="any" placeholder="For example, 35" required><small>Look at the balance on the meter itself. It may be different from your last purchase.</small></label>
+      <label>How long should they last?<input name="target_days" type="number" min="1" max="366" step="1" value="30" required><small>Choose a number of days that works for your household.</small></label>
+    </div>
+    <details class="optional-details"><summary>I have details from a recent electricity purchase</summary>
+      <p class="helper">Optional. These details help explain the purchase; your current meter balance above is still used for the plan.</p>
+      <div class="field-grid three-cols">
+        <label>How much did you pay? (₦)<input name="receipt_amount" type="number" min="0" step="any"></label>
+        <label>How many units did you receive?<input name="receipt_units" type="number" min="0" step="any"></label>
+        <label>Price per unit, if shown (₦)<input name="receipt_rate" type="number" min="0" step="any"></label>
+      </div>
+    </details>
+  </section>
+  {% include "_appliance_editor.html" %}
+  <div class="form-actions"><button class="button button-primary" type="submit">See my unit plan</button><p class="privacy-note">This is an estimate. Your meter shows the units actually available.</p></div>
+</form>
+<section id="results" class="results-panel" aria-live="polite" hidden></section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/app.js') }}" defer></script>{% endblock %}
+

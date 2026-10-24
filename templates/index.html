@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}WattWise — Plan your household electricity{% endblock %}
+{% block content %}
+<section class="hero">
+  <p class="eyebrow">ELECTRICITY PLANNING FOR YOUR HOME</p>
+  <h1>Know what your home’s electricity could cover.</h1>
+  <p class="hero-copy">Choose how you pay. Add a few appliances and your usual routine. WattWise estimates your use and helps you see what you could adjust.</p>
+</section>
+<section class="mode-grid" aria-label="Choose your electricity plan">
+  <article class="mode-card prepaid-card">
+    <div class="mode-icon meter-icon" aria-hidden="true"></div>
+    <p class="eyebrow">BUY CREDIT BEFORE USE</p>
+    <h2>I have a prepaid meter</h2>
+    <p>Your meter shows units you can use before buying more. Enter the balance on the meter and choose how long you want it to last.</p>
+    <a class="button button-primary" href="/prepaid">Plan my meter units</a>
+  </article>
+  <article class="mode-card postpaid-card">
+    <div class="mode-icon bill-icon" aria-hidden="true"></div>
+    <p class="eyebrow">BILL ARRIVES AFTER USE</p>
+    <h2>I receive a postpaid bill</h2>
+    <p>Your bill shows electricity used over a period. Compare those units with an estimate based on the appliances in your home.</p>
+    <a class="button button-secondary" href="/postpaid">Understand my bill</a>
+  </article>
+</section>
+<section class="trust-strip">
+  <span class="trust-icon" aria-hidden="true">i</span>
+  <p><strong>Estimates are not meter readings.</strong> We show the assumptions we use. Your meter and electricity bill remain the source for actual units and charges.</p>
+</section>
+{% endblock %}
+

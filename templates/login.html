@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Sign in — WattWise{% endblock %}
+{% block content %}
+<a class="back-link" href="/">← WattWise home</a>
+<section class="page-intro"><p class="eyebrow">YOUR WATTWISE HOUSEHOLD</p><h1 id="auth-title">Welcome back.</h1><p id="auth-intro">Sign in to continue your household electricity plan. New here? Create an account and choose prepaid or postpaid in the next step.</p></section>
+<section class="form-section auth-card">
+  <div class="auth-switch"><button type="button" class="button button-small button-outline" data-auth-mode="login" aria-pressed="true">Sign in</button><button type="button" class="button button-small button-outline" data-auth-mode="register" aria-pressed="false">Create account</button></div>
+  <form id="auth-form" data-mode="login">
+    <label>Email address<input name="email" type="email" autocomplete="email" maxlength="254" required></label>
+    <label>Password<input name="password" type="password" autocomplete="current-password" minlength="8" maxlength="128" required><small>Use at least 8 characters.</small></label>
+    <button class="button button-primary" type="submit">Sign in</button>
+    <p class="privacy-note">Accounts and saved records are stored in a local SQLite database on this computer. This app does not send them to a cloud account service.</p>
+  </form>
+  <div id="auth-message" class="notice notice-error" role="alert" hidden></div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/auth.js') }}" defer></script>{% endblock %}

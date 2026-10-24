@@ -1,0 +1,58 @@
+<section class="form-section appliance-section">
+  <div class="section-heading">
+    <div><p class="step-kicker">{{ appliance_step|default("STEP 2") }}</p><h2>What do you use at home?</h2></div>
+    <button type="button" class="button button-small button-outline" data-add-appliance>Add appliance</button>
+  </div>
+  <p class="helper appliance-intro">Choose an appliance and describe your usual routine. WattWise fills in a typical energy estimate, which you can change if you know the value on its label.</p>
+  <div class="appliance-list" data-appliance-list></div>
+  <div class="profile-save-row">
+    <button type="button" class="button button-outline" data-save-profile hidden>Save my appliance list</button>
+    <a href="/login" class="save-signin" data-save-signin hidden>Sign in to save this appliance list</a>
+    <span class="save-profile-message" data-profile-message role="status" hidden></span>
+  </div>
+</section>
+<template data-appliance-template>
+  <article class="appliance-card" data-appliance-card>
+    <div class="appliance-card-head"><h3 data-card-title>New appliance</h3><button type="button" class="text-button danger-text" data-remove-appliance>Remove appliance</button></div>
+    <div class="field-grid appliance-main-fields">
+      <label>What appliance is it?
+        <select data-field="appliance_type" required>
+          <option value="" selected disabled>Choose an appliance</option>
+          <option value="fan" data-label="Fan" data-category="cooling" data-watts="75" data-hours="8" data-days="7">Fan</option>
+          <option value="led_bulb" data-label="Light bulb" data-category="lighting" data-watts="10" data-hours="6" data-days="7" data-essential="true">Light bulb</option>
+          <option value="refrigerator" data-label="Fridge or freezer" data-category="refrigeration" data-daily="1.2" data-hours="24" data-days="7" data-essential="true">Fridge or freezer</option>
+          <option value="television" data-label="Television" data-category="entertainment" data-watts="100" data-hours="5" data-days="7">Television</option>
+          <option value="air_conditioner" data-label="Air conditioner" data-category="cooling" data-watts="1200" data-hours="6" data-days="5">Air conditioner</option>
+          <option value="phone_charger" data-label="Phone charging" data-category="other" data-watts="10" data-hours="2" data-days="7">Phone charging</option>
+          <option value="electric_iron" data-label="Iron" data-category="laundry" data-watts="1000" data-hours="1" data-days="2">Iron</option>
+          <option value="water_pump" data-label="Water pump" data-category="pumping" data-watts="500" data-hours="1" data-days="3">Water pump</option>
+          <option value="electric_kettle" data-label="Kettle" data-category="cooking" data-watts="1500" data-hours="0.25" data-days="7">Kettle</option>
+          <option value="microwave" data-label="Microwave" data-category="cooking" data-watts="1000" data-hours="0.5" data-days="4">Microwave</option>
+          <option value="laptop" data-label="Laptop" data-category="entertainment" data-watts="60" data-hours="5" data-days="5">Laptop</option>
+          <option value="other" data-label="Other appliance" data-category="other" data-watts="100" data-hours="2" data-days="5">Something else</option>
+        </select>
+      </label>
+      <label data-custom-label hidden>What do you call it?<input data-field="label" maxlength="80" placeholder="e.g. Water dispenser"></label>
+      <label>How many?<input data-field="quantity" type="number" min="1" max="100" step="1" value="1" required></label>
+    </div>
+    <div class="routine-box" data-routine-box hidden>
+      <div class="routine-box-title"><strong>Your usual routine</strong><span>Change these if your home is different</span></div>
+      <div class="field-grid two-cols routine-row">
+        <label data-hours-field>Hours used on a typical day<input data-field="hours_per_use_day" type="number" min="0" max="24" step="0.5" required></label>
+        <label>Days you use it each week<input data-field="uses_per_week" type="number" min="0" max="7" step="0.5" required></label>
+      </div>
+      <label class="importance-field">Could you reduce its use to make units last longer?
+        <select data-field="essential" required><option value="false">Yes, it’s flexible</option><option value="true">No, my household needs it</option></select>
+      </label>
+      <details class="estimate-details">
+        <summary data-estimate-summary>Know its rating? Enter it for a closer estimate</summary>
+        <label data-power-field>Typical power for one appliance (watts)<input data-field="power_watts" type="number" min="0.01" max="100000" step="any"></label>
+        <label data-daily-field hidden>Typical energy on a day you use it (kWh)<input data-field="kwh_per_use_day" type="number" min="0" max="10000" step="any"></label>
+        <p class="helper">Look for a number followed by W or watts on the appliance label. Enter that number above; WattWise will use it instead of the typical estimate.</p>
+      </details>
+    </div>
+    <input data-field="category" type="hidden"><input data-field="source" type="hidden" value="catalog_estimate">
+    <input data-field="id" type="hidden">
+  </article>
+</template>
+
