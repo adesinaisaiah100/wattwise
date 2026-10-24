@@ -1,0 +1,85 @@
+{
+  "billing_period": {
+    "days": 30,
+    "start_date": null,
+    "end_date": null
+  },
+  "billed_consumption": {
+    "units_kwh": null,
+    "previous_reading_kwh": 1000.0,
+    "present_reading_kwh": 1100.0,
+    "multiplier": 1.0,
+    "reading_type": "actual"
+  },
+  "tariff": {
+    "rate_ngn_per_kwh": 100.0,
+    "disco": "IBEDC",
+    "band": "B",
+    "effective_date": null,
+    "source": "user_bill"
+  },
+  "bill": {
+    "total_amount_ngn": 12500.0,
+    "energy_charge_ngn": 10000.0,
+    "other_charges_ngn": 2500.0,
+    "arrears_or_credit_ngn": null
+  },
+  "appliances": [
+    {
+      "id": "light-1",
+      "type": "led_bulb",
+      "label": "LED bulbs",
+      "category": "lighting",
+      "quantity": 5,
+      "essential": true,
+      "energy_input": {
+        "method": "power_and_schedule",
+        "power_watts": 10,
+        "source": "appliance_label",
+        "usage_factor": 1.0
+      },
+      "routine": {
+        "hours_per_use_day": 6,
+        "uses_per_week": 7,
+        "preferred_time": null
+      }
+    },
+    {
+      "id": "fan-1",
+      "type": "fan",
+      "label": "Bedroom fan",
+      "category": "cooling",
+      "quantity": 1,
+      "essential": false,
+      "energy_input": {
+        "method": "power_and_schedule",
+        "power_watts": 75,
+        "source": "appliance_label",
+        "usage_factor": 1.0
+      },
+      "routine": {
+        "hours_per_use_day": 8,
+        "uses_per_week": 7,
+        "preferred_time": "night"
+      }
+    },
+    {
+      "id": "fridge-1",
+      "type": "refrigerator",
+      "label": "Refrigerator",
+      "category": "refrigeration",
+      "quantity": 1,
+      "essential": true,
+      "energy_input": {
+        "method": "known_daily_energy",
+        "kwh_per_use_day": 1.2,
+        "source": "measured"
+      },
+      "routine": {
+        "hours_per_use_day": 24,
+        "uses_per_week": 7,
+        "preferred_time": null
+      }
+    }
+  ]
+}

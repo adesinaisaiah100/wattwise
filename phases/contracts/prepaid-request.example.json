@@ -1,0 +1,71 @@
+{
+  "target_days": 14,
+  "available_units_kwh": 60.0,
+  "topup_receipt": {
+    "amount_paid_ngn": null,
+    "units_credited_kwh": null,
+    "rate_ngn_per_kwh": null,
+    "vat_ngn": null,
+    "debt_deduction_ngn": null,
+    "other_fee_ngn": null,
+    "transaction_date": null
+  },
+  "appliances": [
+    {
+      "id": "light-1",
+      "type": "led_bulb",
+      "label": "LED bulbs",
+      "category": "lighting",
+      "quantity": 5,
+      "essential": true,
+      "energy_input": {
+        "method": "power_and_schedule",
+        "power_watts": 10,
+        "source": "appliance_label",
+        "usage_factor": 1.0
+      },
+      "routine": {
+        "hours_per_use_day": 6,
+        "uses_per_week": 7,
+        "preferred_time": null
+      }
+    },
+    {
+      "id": "fan-1",
+      "type": "fan",
+      "label": "Bedroom fan",
+      "category": "cooling",
+      "quantity": 1,
+      "essential": false,
+      "energy_input": {
+        "method": "power_and_schedule",
+        "power_watts": 75,
+        "source": "appliance_label",
+        "usage_factor": 1.0
+      },
+      "routine": {
+        "hours_per_use_day": 8,
+        "uses_per_week": 7,
+        "preferred_time": "night"
+      }
+    },
+    {
+      "id": "fridge-1",
+      "type": "refrigerator",
+      "label": "Refrigerator",
+      "category": "refrigeration",
+      "quantity": 1,
+      "essential": true,
+      "energy_input": {
+        "method": "known_daily_energy",
+        "kwh_per_use_day": 1.2,
+        "source": "measured"
+      },
+      "routine": {
+        "hours_per_use_day": 24,
+        "uses_per_week": 7,
+        "preferred_time": null
+      }
+    }
+  ]
+}

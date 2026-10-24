@@ -1,0 +1,39 @@
+{
+  "success": true,
+  "data": {
+    "mode": "postpaid",
+    "billing_period_days": 30,
+    "estimated_household_kwh": 63.0,
+    "estimated_daily_kwh": 2.1,
+    "billed_consumption": {
+      "units_kwh": 100.0,
+      "source": "readings_derived",
+      "reading_type": "actual"
+    },
+    "comparisons": [
+      {
+        "kind": "estimated_minus_billed_kwh",
+        "estimated_kwh": 63.0,
+        "billed_kwh": 100.0,
+        "difference_kwh": -37.0
+      },
+      {
+        "kind": "expected_billed_energy_charge_minus_supplied_energy_charge",
+        "expected_from_billed_units_ngn": 10000.0,
+        "supplied_energy_charge_ngn": 10000.0,
+        "difference_ngn": 0.0
+      }
+    ],
+    "estimated_household_energy_charge_ngn": 6300.0,
+    "total_amount_due_ngn": 12500.0,
+    "other_charges_ngn": 2500.0,
+    "assumptions": [
+      "Household kWh is estimated from the supplied appliance ratings and routines.",
+      "Billed kWh is derived from actual readings and the supplied multiplier."
+    ],
+    "warnings": [
+      "A household appliance estimate is not a meter reading and cannot establish that a bill is incorrect."
+    ]
+  },
+  "warnings": []
+}

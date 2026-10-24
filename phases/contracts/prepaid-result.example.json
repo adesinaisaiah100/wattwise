@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "data": {
+    "mode": "prepaid",
+    "target_days": 14,
+    "available_units_kwh": 60.0,
+    "daily_budget_kwh": 4.285714,
+    "estimated_daily_consumption_kwh": 2.1,
+    "estimated_target_consumption_kwh": 29.4,
+    "projected_duration_days": 28.571429,
+    "units_after_target_kwh": 30.6,
+    "target_met": true,
+    "appliance_breakdown": [
+      {"appliance_id": "light-1", "label": "LED bulbs", "daily_kwh": 0.3, "period_kwh": 4.2},
+      {"appliance_id": "fan-1", "label": "Bedroom fan", "daily_kwh": 0.6, "period_kwh": 8.4},
+      {"appliance_id": "fridge-1", "label": "Refrigerator", "daily_kwh": 1.2, "period_kwh": 16.8}
+    ],
+    "routine_options": [],
+    "assumptions": [
+      "The available meter balance and appliance inputs were supplied by the user.",
+      "The routine is treated as an average weekly schedule across the target period."
+    ],
+    "warnings": []
+  },
+  "warnings": []
+}
