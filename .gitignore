@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+.pytest_cache/
+.ruff_cache/
+models/
+*.gguf
+*.sqlite3
+*.db
+*.secret
+instance/
+dist/
+build/
+
