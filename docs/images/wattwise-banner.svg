@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">WattWise — electricity planning for your home</title>
+  <desc id="desc">A warm pale-green banner with WattWise branding, a home outline, an electricity meter, and a weekly energy-use chart.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6f8f2"/>
+      <stop offset="1" stop-color="#e7f1e8"/>
+    </linearGradient>
+    <linearGradient id="orb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d8eadb"/>
+      <stop offset="1" stop-color="#c4e1d1"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#44705b" stroke-opacity=".055" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="360" rx="28" fill="url(#background)"/>
+  <rect width="1200" height="360" rx="28" fill="url(#grid)"/>
+  <circle cx="1000" cy="176" r="214" fill="url(#orb)" opacity=".72"/>
+  <circle cx="1080" cy="48" r="100" fill="#ffffff" opacity=".22"/>
+
+  <rect x="64" y="48" width="44" height="44" rx="13" fill="#14734f"/>
+  <path d="m73 60 5 21h5l4-12 4 12h5l5-21h-6l-2 13-4-12h-4l-4 12-2-13z" fill="#fff"/>
+  <text x="122" y="78" fill="#183027" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" letter-spacing="-.5">WattWise</text>
+  <text x="66" y="139" fill="#14734f" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="2.1">ELECTRICITY PLANNING FOR YOUR HOME</text>
+  <text x="64" y="207" fill="#172b23" font-family="Georgia, 'Times New Roman', serif" font-size="53" font-weight="700" letter-spacing="-1.6">Make every unit count.</text>
+  <text x="66" y="247" fill="#496256" font-family="Arial, Helvetica, sans-serif" font-size="19">Understand your household use and build a routine that fits.</text>
+  <rect x="66" y="278" width="150" height="32" rx="16" fill="#ffffff" stroke="#c9ddd0"/>
+  <circle cx="84" cy="294" r="5" fill="#15804f"/>
+  <text x="98" y="299" fill="#274c3a" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">PREPAID PLANNING</text>
+  <rect x="228" y="278" width="162" height="32" rx="16" fill="#ffffff" stroke="#c9ddd0"/>
+  <circle cx="246" cy="294" r="5" fill="#b27a22"/>
+  <text x="260" y="299" fill="#274c3a" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">POSTPAID INSIGHTS</text>
+
+  <g transform="translate(690 58)">
+    <path d="M45 104 191 4l146 100v182H45z" fill="#f9fbf7" stroke="#b6d0bf" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M27 108 191-6l164 114" fill="none" stroke="#246e4d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="156" y="153" width="71" height="92" rx="13" fill="#e9f3eb" stroke="#85aa91" stroke-width="2"/>
+    <rect x="169" y="166" width="45" height="28" rx="5" fill="#fff" stroke="#bad0c0"/>
+    <text x="191.5" y="185" text-anchor="middle" fill="#1f6244" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">kWh</text>
+    <circle cx="191" cy="211" r="7" fill="#1d8054"/>
+    <path d="m271 147-24 43h22l-13 31 45-52h-25l14-22z" fill="#d7a63d" stroke="#bc892b" stroke-width="2" stroke-linejoin="round"/>
+  </g>
+
+  <g transform="translate(785 82) scale(.78)">
+    <rect x="218" y="0" width="258" height="190" rx="20" fill="#ffffff" stroke="#d4e3d8" stroke-width="2"/>
+    <text x="242" y="34" fill="#456152" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="1.2">WEEKLY ENERGY ROUTINE</text>
+    <path d="M244 144H449" stroke="#d8e6dc" stroke-width="2"/>
+    <path d="M244 107h205M244 70h205" stroke="#e9f0eb" stroke-width="1"/>
+    <rect x="260" y="103" width="20" height="41" rx="6" fill="#b4c9b8"/>
+    <rect x="300" y="83" width="20" height="61" rx="6" fill="#75a888"/>
+    <rect x="340" y="94" width="20" height="50" rx="6" fill="#9abda2"/>
+    <rect x="380" y="57" width="20" height="87" rx="6" fill="#33855c"/>
+    <rect x="420" y="75" width="20" height="69" rx="6" fill="#69a17c"/>
+    <text x="270" y="163" text-anchor="middle" fill="#718278" font-family="Arial, Helvetica, sans-serif" font-size="10">M</text>
+    <text x="310" y="163" text-anchor="middle" fill="#718278" font-family="Arial, Helvetica, sans-serif" font-size="10">T</text>
+    <text x="350" y="163" text-anchor="middle" fill="#718278" font-family="Arial, Helvetica, sans-serif" font-size="10">W</text>
+    <text x="390" y="163" text-anchor="middle" fill="#718278" font-family="Arial, Helvetica, sans-serif" font-size="10">T</text>
+    <text x="430" y="163" text-anchor="middle" fill="#718278" font-family="Arial, Helvetica, sans-serif" font-size="10">F</text>
+  </g>
+</svg>

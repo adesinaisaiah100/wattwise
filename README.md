@@ -1,5 +1,9 @@
 # WattWise
 
+<p align="center">
+  <img src="docs/images/wattwise-banner.svg" alt="WattWise — plan how your home uses electricity, with prepaid and postpaid tools." width="100%">
+</p>
+
 WattWise is a local-first electricity planning web app for Nigerian households. It helps prepaid customers plan how to make their current meter units last, and helps postpaid customers understand household appliance use alongside the figures on their electricity bill.
 
 The app combines deterministic Python calculations with a locally run Qwen model. The model proposes appliance routines; WattWise calculates the energy use and checks whether a proposed routine reaches the household's goal.
@@ -9,6 +13,7 @@ The app combines deterministic Python calculations with a locally run Qwen model
 ## Contents
 
 - [What it does](#what-it-does)
+- [Screenshots](#screenshots)
 - [How it works](#how-it-works)
 - [Technology](#technology)
 - [Run locally](#run-locally)
@@ -34,6 +39,25 @@ Enter appliances and routines, the bill period, and any bill details available (
 ### AI routine planner
 
 For either service type, Qwen proposes a structured appliance schedule. The interface presents the verified result as a goal summary, energy and cost estimates where possible, an appliance comparison chart, and an editable schedule table. WattWise protects appliances the user marked as essential and recalculates the plan in Python. If a goal is not feasible without changing essential use, the app reports the closest safe plan instead of claiming success.
+
+## Screenshots
+
+These captures show the current WattWise interface with example analysis values. They are not official DisCo readings or tariff quotations.
+
+<p align="center">
+  <img src="docs/images/home-service-choice.png" alt="WattWise home page where a household chooses prepaid meter planning or postpaid bill analysis." width="88%">
+</p>
+<p align="center"><em>Choose the service that matches the household: prepaid meter units or a postpaid bill.</em></p>
+
+<p align="center">
+  <img src="docs/images/routine-plan.png" alt="AI-assisted routine plan with daily energy estimates, appliance comparison bars, and an editable schedule table." width="88%">
+</p>
+<p align="center"><em>Review the suggested routine, see the estimated energy change, and inspect appliance-by-appliance assumptions.</em></p>
+
+<p align="center">
+  <img src="docs/images/postpaid-analysis.png" alt="Postpaid bill analysis comparing estimated household use with billed consumption and estimated energy charges." width="88%">
+</p>
+<p align="center"><em>Compare estimated household use with bill details supplied by the user.</em></p>
 
 ## How it works
 
