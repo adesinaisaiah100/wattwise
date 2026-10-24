@@ -18,6 +18,7 @@ The app combines deterministic Python calculations with a locally run Qwen model
 - [Documentation](#documentation)
 - [Privacy and data](#privacy-and-data)
 - [Model, dependencies, and licensing](#model-dependencies-and-licensing)
+- [Acknowledgements](ACKNOWLEDGEMENTS.md)
 - [Known limitations](#known-limitations)
 
 ## What it does
@@ -238,6 +239,7 @@ SYSTEM_DESIGN.md          Domain rules, flows, component design, and data model
 - [API reference](docs/API.md) — routes, inputs, auth requirements, and plan response semantics.
 - [Demo walkthrough](docs/DEMO.md) — synthetic cases and presentation checklist.
 - [Submission checklist](docs/SUBMISSION_CHECKLIST.md) — release items still needing team sign-off or a target-machine demo.
+- [Acknowledgements](ACKNOWLEDGEMENTS.md) — project license, model/runtime/dependency licenses, starter reference, and AI-assisted contribution disclosure.
 - [Implementation phases](phases/README.md) — completed components, dependencies, and release gates.
 - [Phase 1 API contracts and fixtures](phases/contracts/API_CONTRACTS.md).
 - [Phase 10 submission checklist](phases/10-documentation-demo-release.md).
@@ -254,7 +256,7 @@ To preserve accounts and saved records, back up both files from `instance/` whil
 - **Inference runtime:** [`llama.cpp`](https://github.com/ggml-org/llama.cpp), installed separately by each developer, upstream project license MIT.
 - **Direct Python dependencies:** Flask (BSD-3-Clause) and PyJWT (MIT), listed in `requirements.txt`; Python standard library is used for SQLite, calculations, and HTTP calls.
 - **Starter reference:** [ai-app-starter](https://github.com/victorjayeoba/ai-app-starter) informed the initial project setup. WattWise uses a Flask/HTML implementation and does not require the starter's Gradio interface. Check the upstream repository's current license before copying or redistributing any of its files.
-- **WattWise project license:** No top-level `LICENSE` file is included yet. The project owners should choose and add a license before public reuse or redistribution; third-party model/dependency licenses do not license WattWise itself.
+- **WattWise project license:** [MIT](LICENSE). This covers WattWise project contributions; third-party models, libraries, and any separately reused material remain under their own licenses. See [acknowledgements](ACKNOWLEDGEMENTS.md).
 
 ## Known limitations
 
