@@ -1,0 +1,2 @@
+"""Deterministic WattWise domain logic."""
+
